@@ -1,1 +1,1 @@
-# ProcImDig
+# Estudo de Processamento de Imagem Digital
