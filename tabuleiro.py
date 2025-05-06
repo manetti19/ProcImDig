@@ -1,45 +1,36 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.patches as patches
 
-# Criar o tabuleiro
-n = 8
-tabuleiro = np.zeros((n, n))
-for i in range(n):
-    for j in range(n):
-        if (i + j) % 2 == 1:
-            tabuleiro[i, j] = 1
+# Cria um tabuleiro 8x8 com padrão xadrez
+board = np.zeros((8, 8))
+board[1::2, ::2] = 1
+board[::2, 1::2] = 1
 
-# Posições iniciais das peças usando emojis
-# Peças pretas (letras maiúsculas)
-# Peças brancas (letras minúsculas)
-pecas = [
-    ["♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜"],
-    ["♟"] * 8,
-    [""] * 8,
-    [""] * 8,
-    [""] * 8,
-    [""] * 8,
-    ["♙"] * 8,
-    ["♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"]
-]
+# Letras das colunas (A-H) e números das linhas (1-8)
+columns = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+rows = list(range(8, 0, -1))
 
-# Plotar o tabuleiro
-fig, ax = plt.subplots(figsize=(6, 6))
-ax.imshow(tabuleiro, cmap='gray', extent=[0, 8, 0, 8])
+# Mostra o tabuleiro
+fig, ax = plt.subplots()
+ax.imshow(board, cmap='gray', extent=[0, 8, 0, 8])
 
-# Adicionar as peças
-for i in range(n):
-    for j in range(n):
-        peca = pecas[i][j]
-        if peca != "":
-            ax.text(j + 0.5, 7.5 - i, peca, fontsize=32, ha='center', va='center')
+# Define os rótulos personalizados
+ax.set_xticks(np.arange(0.5, 8.5, 1))
+ax.set_yticks(np.arange(0.5, 8.5, 1))
+ax.set_xticklabels(columns)
+ax.set_yticklabels(rows)
 
-# Adicionar grades e rótulos
-for i in range(n + 1):
-    ax.axhline(i, color='black', linewidth=1)
-    ax.axvline(i, color='black', linewidth=1)
+# Move os ticks para o topo e esquerda
+ax.tick_params(top=True, bottom=False, labeltop=True, labelbottom=False)
 
-ax.set_xticks([])
-ax.set_yticks([])
-ax.set_title("Tabuleiro de Xadrez do Rafael com Peças", fontsize=16)
+# Remove a grade e bordas padrões
+ax.grid(False)
+for spine in ax.spines.values():
+    spine.set_visible(False)
+
+# Adiciona borda preta fina em volta do tabuleiro
+borda = patches.Rectangle((0, 0), 8, 8, linewidth=1, edgecolor='black', facecolor='none')
+ax.add_patch(borda)
+
 plt.show()
