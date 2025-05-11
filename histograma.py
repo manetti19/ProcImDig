@@ -24,9 +24,6 @@ plt.grid()
 plt.show()
 
 
-
-
-
 # Abre a imagem e converte para tons de cinza
 img2 = Image.open('./arroz.png').convert('L')
 
