@@ -1,0 +1,13 @@
+caso,metodo,original_bits,comprimido_bits,C,reducao_percent,tempo_s,entropia_bits_por_simbolo
+Lena RGB,Huffman (seu) - bits teóricos,6291456,5894919,1.0673,6.3,0.018473,
+Lena RGB,Huffman (dahuffman) - bits reais,6291456,5894920,1.0673,6.3,0.759817,
+Lena RGB,Aritmética (entropia) - bits estimados,6291456,5875229,1.0708,6.62,0.025529,
+Lena Gray,Huffman (seu) - bits teóricos,2097152,1907521,1.0994,9.04,0.007316,
+Lena Gray,Huffman (dahuffman) - bits reais,2097152,1907528,1.0994,9.04,0.253669,
+Lena Gray,Aritmética (entropia) - bits estimados,2097152,1896743,1.1057,9.56,0.006844,
+Lena Binary (40%),Huffman (seu) - bits teóricos,2097152,262144,8.0,87.5,0.005926,
+Lena Binary (40%),Huffman (dahuffman) - bits reais,2097152,382960,5.4762,81.74,0.09261,
+Lena Binary (40%),Aritmética (entropia) - bits estimados,2097152,260985,8.0355,87.56,0.005646,
+Area23,Huffman (seu) - bits teóricos,116280912,102291511,1.1368,12.03,0.385572,
+Area23,Huffman (dahuffman) - bits reais,116280912,102291520,1.1368,12.03,12.428595,
+Area23,Aritmética (entropia) - bits estimados,116280912,101755798,1.1427,12.49,0.372524,
