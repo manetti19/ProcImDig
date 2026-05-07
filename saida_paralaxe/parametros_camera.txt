@@ -1,0 +1,5 @@
+Focal Length: 3643.07 pixels = 9.51 mm
+Principal Point (cx, cy): (-7.17, 4.02)
+Pixel Size: 0.00261 mm
+Baseline: 7.8 mm
+Resolucao: 4864 x 3648
